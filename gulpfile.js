@@ -31,7 +31,8 @@ gulp.task("servers",() => {
                 res.end('')
                 return;
             }
-            res.end(fs.readFileSync(path.join(__dirname, 'src' , pathname)))
+            var urls = path.join(__dirname, 'src' , pathname);
+            res.end(fs.readFileSync(urls))
         }
     }))
 })
