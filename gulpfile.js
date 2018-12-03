@@ -19,3 +19,26 @@ gulp.task("watch",() => {
 
 gulp.task('dev',gulp.series('sass','watch'))
 
+gulp.task("servers",() => {
+    return gulp.src('src')
+    .pipe(server({
+        port : 9997,
+        open : true,
+        middleware(req,res,next) {
+            var pathname = url.parse(req.url).pathname;
+            console.log(pathname)
+            if(pathname === '/favicon.ico') {
+                res.end('')
+                return;
+            }
+            res.end(fs.readFileSync(path.join(__dirname, 'src' , pathname)))
+        }
+    }))
+})
+
+gulp.task("uglify",() => {
+    return gulp.src('./src/js/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest("./src/jss"))
+})
+gulp.task("default",gulp.series('dev','servers','uglify'))
