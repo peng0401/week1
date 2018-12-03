@@ -41,4 +41,4 @@ gulp.task("uglify",() => {
     .pipe(uglify())
     .pipe(gulp.dest("./src/jss"))
 })
-gulp.task("default",gulp.series('dev','servers','uglify'))
+gulp.task("default",gulp.parallel('dev','servers','uglify'))
