@@ -1,1 +1,1 @@
-*{padding:0;margin:0;list-style:none}body,html{width:100%;height:100%}.wrap{width:100%;height:100%;overflow:hidden}
+*{padding:0;margin:0;list-style:none}body,html{width:100%;height:100%}.wrap{width:100%;height:100%;overflow:hidden}.wrap header{width:100%;height:40px;display:flex;justify-content:space-between;align-items:center;background:#ccc}.wrap section .banner{width:100%;height:200px}.wrap section .banner img{width:100%;height:100%}
